@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Character Counter</h2>
+
+<p>Maximum 200 characters</p>
+
+<textarea id="msg" rows="5" cols="30" onkeyup="countChar()"></textarea>
+
+<p id="result">0 / 200 characters</p>
+
+<script>
+
+function countChar() {
+
+    let text = document.getElementById("msg").value;
+    let count = text.length;
+
+    document.getElementById("result").innerHTML =
+    count + " / 200 characters";
+
+    if(count > 200) {
+        alert("Character limit exceeded!");
+        document.getElementById("msg").value =
+        text.substring(0, 200);
+    }
+}
+
+</script>
+
+</body>
+</html>
